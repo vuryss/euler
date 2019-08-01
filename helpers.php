@@ -15,7 +15,7 @@ function ESieve($number)
     return array_keys(array_filter($primes));
 }
 
-function isPrime($number): bool
+function isPrime(int $number): bool
 {
     if ($number === 2) {
         return true;
