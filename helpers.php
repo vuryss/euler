@@ -1,5 +1,18 @@
 <?php
 
+function gmpPrimes($limit, $start = 2): array
+{
+    $primes = [];
+    $p = gmp_intval(gmp_nextprime($start - 1));
+
+    do {
+        $primes[] = $p;
+        $p = gmp_intval(gmp_nextprime($p));
+    } while ($p <= $limit);
+
+    return $primes;
+}
+
 function ESieve($number)
 {
     $primes = array_fill_keys(range(2, $number), true);
